@@ -101,7 +101,7 @@ password=getText("text_input3");
 
 
 onEvent("button18", "click", function( ) {
-    if (password==="0374818") {
+    if (password==="123456789") {
   setScreen("screen1");
 }
 
