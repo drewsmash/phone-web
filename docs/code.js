@@ -1,3 +1,14 @@
+/*the plan for this app is to keep adding pages from code.org to this so it grows and this practicly becomes a phone make it a app on the play store and the app store.
+this is my plan for my class and beond   */
+
+
+
+
+
+
+
+
+
 //--------------------------------------------------START-----------------------------------------------------------------
 var size;
 var password;
@@ -32,7 +43,7 @@ onEvent("slider1", "input", function( ) {
 	}
 });
 //home button
-
+//evrey button needs to go to screen1.
 onEvent("button1", "click", function( ) {
   setScreen("screen2");
 });
@@ -63,6 +74,7 @@ onEvent("button4","click",function( ) {
   setScreen("screen6");
 });
 // DREWgoogle-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//drewgoogle uses google seachformat to lookup the question.
 onEvent("text_input1","change",function( ){
 search=getText("text_input1");
 });
@@ -101,7 +113,7 @@ password=getText("text_input3");
 
 
 onEvent("button18", "click", function( ) {
-    if (password==="123456789") {
+    if (password==="password123") {
   setScreen("screen1");
 }
 
@@ -145,7 +157,9 @@ onEvent("button26", "click", function( ) {
 onEvent("button23", "click", function( ) {
   setScreen("screen1");
 });
-
+onEvent("button32","click",   function( ){
+  setScreen("screen1");
+});
 
 //---------------------------------------------------------END------------------------------------------------------------
 
@@ -851,8 +865,39 @@ stopSound("assets/Best-Remixes-Of-Popular-Songs-20.mp3");
 
 
 
+//--------------------------------------------------------------------------------------------------------------------------
+//weather app
+var City;
+var weather;
+var weatherTemp;
+onEvent("button27","click",function( ){
+  setScreen("screen13");
+});
+
+onEvent("button31", "click", function( ){
+  City = getText("text_input4");
+  weather = ("https://api.openweathermap.org/data/2.5/weather?q=")+(City)+(",US&units=imperial&=&callback=&appid=931964082e93324dc3d5e06deb7c7fce") ;
+  startWebRequest(weather, function(status, type, content) {
+  weatherTemp = content ;
+  //if (weatherTemp >= 70 ) {
+  //  setText("text_area3","its a good temp outside");
+  //}
+  setText("text_area3",weatherTemp);
+  playSpeech(weatherTemp, "male", "English");
+});
+
+  
+});
 
 
+
+//var City = getText("text_input1");
+//var weather = ("https://api.openweathermap.org/data/2.5/weather?q=")+(City)+(",US&units=imperial&=&callback=&appid=931964082e93324dc3d5e06deb7c7fce") ;
+ //startWebRequest(weather, function(status, type, content) 
+
+
+
+ 
 
 
 
